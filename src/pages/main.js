@@ -4,7 +4,7 @@ function Main(props) {
     const { category } = useParams()
     return(
         <>
-        <h1>From main {category}</h1>
+        <h1>From mainsssss {category}</h1>
         </>
     )
 }
