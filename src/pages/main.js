@@ -1,18 +1,12 @@
 import React from "react";
-class Main extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-     
-    };
-  }
-  render() {
-    return (
-      <div>
-        <h1>From Main</h1>
-      </div>
-    );
-  }
+import { useHistory, useParams } from 'react-router-dom';
+function Main(props) {
+    const { category } = useParams()
+    return(
+        <>
+        <h1>From main {category}</h1>
+        </>
+    )
 }
 
 export default Main;
