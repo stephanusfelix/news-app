@@ -15,7 +15,6 @@ function Button(props) {
         </>
       );
     } else {
-        console.log(props)
       return (
         <>
           <button onClick={props.save} style={style2}>Save</button>
@@ -27,7 +26,7 @@ function Button(props) {
     cursor: "pointer",
     borderRadius: "5px",
     padding: "10px 15px",
-    margin:'10px 15px 0 0'
+    margin:'20px 15px 0 0'
   };
   const style1 = {
     ...style,
@@ -38,7 +37,8 @@ function Button(props) {
   const style2 = {
       ...style,
       border: '1px solid blue',
-      color: 'blue'
+      color: 'blue',
+      backgroundColor: 'white'
   };
   return (
     <>

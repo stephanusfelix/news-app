@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import NewsCard from '../components/NewsCard'
 import "../styles/pages/main.scss";
 import axios from "axios";
 
@@ -35,16 +36,8 @@ function Main(props) {
 
         <div className="allnews">
           {data ? (
-            data.articles.map((news) => (
-              //dibawah diganti komponen card
-              <div>
-                <h1>{news.title}</h1>
-                <p>{news.description}</p>
-                <span>{news.author}</span> <br />
-                <span>{news.publishedAt}</span>
-                <span>{news.source.name}</span>
-              </div>
-              //diatas ini diganti komponen card
+            data.articles.map((news,index) => (
+              <NewsCard data={news} key={index}/>
             ))
           ) : (
             <h1>Loading...</h1>
