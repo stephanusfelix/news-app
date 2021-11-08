@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import NewsCard from '../components/NewsCard'
+import NewsCard from "../components/NewsCard";
 import "../styles/pages/main.scss";
 import axios from "axios";
 
@@ -20,9 +20,13 @@ function Main(props) {
   useEffect(() => {
     axios
       .get(url)
-      .then((response) => setData(response.data))
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      })
       .catch((error) => console.log(error));
   }, [url]);
+
   //kode diatas ini coba-coba konek ke API
 
   return (
@@ -33,16 +37,18 @@ function Main(props) {
           News
         </h1>
         <hr></hr>
-
-        <div className="allnews">
-          {data ? (
-            data.articles.map((news,index) => (
-              <NewsCard data={news} key={index}/>
-            ))
-          ) : (
-            <h1>Loading...</h1>
-          )}
-        </div>
+        {data ? (
+          <div className="listnews">
+            {data.articles.map((news, index) => (
+              <NewsCard data={news} key={index} />
+            ))}
+          </div>
+        ) : (
+          <div className="spinner">
+            <span>Loading</span>
+            <div className="half-spinner"></div>
+          </div>
+        )}
       </div>
     </>
   );
