@@ -11,9 +11,6 @@ const Navbar = (props) => {
     margin: "20px",
     overflow:'hidden'
   };
-  const save= ()=>{
-    console.log(data)
-  }
   return (
     <>
       <div style={style}>
@@ -21,7 +18,7 @@ const Navbar = (props) => {
         <Title title={data.title} />
         {data.author ? <Writer writer={data.author} /> : <></>}
         <Desc desc={data.description} />
-        <ButtonGroup url={data.url} save={save}/>
+        <ButtonGroup url={data.url} save={data}/>
       </div>
     </>
   );
