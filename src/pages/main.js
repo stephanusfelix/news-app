@@ -9,7 +9,7 @@ function Main(props) {
 
   //kode dibawah ini coba-coba konek ke API
   const [data, setData] = useState();
-  const apiKey = "bf81d07aeadd4b34aa62dc49bd08142c";
+  const apiKey = "bf81d07aeadd4b34aa62dc49bd08142cd";
   let url = "url";
   if (!category) {
     url = `https://newsapi.org/v2/top-headlines?country=id&apiKey=${apiKey}`;
@@ -22,7 +22,7 @@ function Main(props) {
       .get(url)
       .then((response) => {
         setData(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch((error) => console.log(error));
   }, [url]);
