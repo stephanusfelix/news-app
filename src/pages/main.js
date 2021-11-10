@@ -9,6 +9,7 @@ function Main(props) {
 
   //kode dibawah ini coba-coba konek ke API
   const [data, setData] = useState();
+  const [isFound, setIsFound] = useState(false);
   const apiKey = "bf81d07aeadd4b34aa62dc49bd08142c";
   let url = "url";
   if (!category) {
@@ -23,6 +24,9 @@ function Main(props) {
       .then((response) => {
         setData(response.data);
         console.log(response.data);
+        if (response.data.totalResults > 0) {
+          setIsFound(true);
+        }
       })
       .catch((error) => console.log(error));
   }, [url]);
@@ -49,6 +53,7 @@ function Main(props) {
             <div className="half-spinner"></div>
           </div>
         )}
+        {data && !isFound ? <>Tidak ketemu</> : <></>}
       </div>
     </>
   );
