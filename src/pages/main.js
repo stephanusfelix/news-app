@@ -33,7 +33,6 @@ function Main(props) {
   }, [url]);
 
   //kode diatas ini coba-coba konek ke API
-
   return (
     <>
       <div className="main">
@@ -43,18 +42,30 @@ function Main(props) {
         </h1>
         <hr></hr>
         {data ? (
-          <div className="listnews">
-            {data.articles.map((news, index) => (
-              <NewsCard data={news} key={index} />
-            ))}
-          </div>
+          data && !isFound ? (
+            <div className="emptymessage">
+              <h2>
+                Maaf berita dengan topik <strong>"{category}" </strong>tidak
+                ditemukan
+              </h2>
+              <h4>
+                Pastikan kata kunci yang anda tulis sesuai dan tidak terdapat
+                kesalahan pengejaan
+              </h4>
+            </div>
+          ) : (
+            <div className="listnews">
+              {data.articles.map((news, index) => (
+                <NewsCard data={news} key={index} />
+              ))}
+            </div>
+          )
         ) : (
           <div className="spinner">
             <span>Loading</span>
             <div className="half-spinner"></div>
           </div>
         )}
-        {data && !isFound ? <>Tidak ketemu</> : <></>}
       </div>
     </>
   );

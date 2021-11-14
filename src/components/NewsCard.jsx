@@ -3,8 +3,8 @@ import { ButtonGroup, Desc, Source, Title, Writer } from "./newscard/index.js";
 const Navbar = (props) => {
   const data = props.data;
   const style = {
-    // width: "400px",
-    width:"80%",
+    width: "90%",
+    maxWidth :"400px",
     padding: "25px",
     boxShadow: "rgba(0, 0, 0, 0.12) 0px 6px 16px 0px",
     borderRadius: "10px",

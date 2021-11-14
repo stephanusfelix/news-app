@@ -1,7 +1,7 @@
 import React from "react";
 function Title(props){
   const style={
-    fontSize:'30px',
+    fontSize:'150%',
     fontWeight:'bolder'
   }
   return (
