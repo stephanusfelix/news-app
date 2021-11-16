@@ -1,27 +1,6 @@
 import React from "react";
 function Button(props) {
-  const buttonCustom = () => {
-    if (props.url) {
-      return (
-        <>
-          <button
-            style={style1}
-            onClick={() => {
-              window.open(props.url);
-            }}
-          >
-            News Page
-          </button>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <button onClick={props.save} style={style2}>Save</button>
-        </>
-      );
-    }
-  };
+
   const style = {
     cursor: "pointer",
     borderRadius: "5px",
@@ -40,9 +19,15 @@ function Button(props) {
       color: 'blue',
       backgroundColor: 'white'
   };
+  let styles = {};
+  if(props.theme === 'blue'){
+   styles = style2;
+  }else if(props.theme === "white"){
+    styles = style1;
+  }
   return (
     <>
-      <div>{buttonCustom()}</div>
+     <button onClick={props.click} style={styles}>{props.children}</button>
     </>
   );
 }
