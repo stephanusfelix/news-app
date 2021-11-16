@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import "../styles/components/navbar.scss";
 import "./search"
 import Search from "./search";
+
 const Navbar = () => {
   return (
     <>
