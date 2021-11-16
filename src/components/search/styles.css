@@ -1,0 +1,25 @@
+.BUTTON {
+    height: 35px;
+    width: 100px;
+    background-color: #ffcc00;
+    font-weight: Bold;
+    margin: 10px 0px 5px 10px;
+    cursor: pointer;
+}
+
+.BUTTON:hover {
+ background-color: white;
+}
+
+.BUTTON:active {
+    background-color: #ffcc00;
+}   
+
+.INPUT {
+    height: 28px;
+    width: 250px;
+    margin: 10px 0px 5px 750px;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-Size: 15px;
+}
