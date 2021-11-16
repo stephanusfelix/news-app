@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+
 import "../styles/components/navbar.scss";
+import "./search"
+import Search from "./search";
+
 const Navbar = () => {
   return (
     <>
@@ -17,6 +21,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/saved">Saved</Link>
+          </li>
+          <li>
+            <Search />
           </li>
         </ul>
       </div>
