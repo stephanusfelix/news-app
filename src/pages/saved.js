@@ -1,18 +1,20 @@
 import React from "react";
-class Saved extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-     
-    };
-  }
-  render() {
+import { connect } from "react-redux";
+import Table from "../components/Table";
+
+function Saved(props){
+  console.log('props dari app',props.news)
+
     return (
       <div>
-        <h1>From Saved</h1>
+        <Table news={props.news}/>
       </div>
     );
   }
+
+const mapStateToProps = (state) => {
+  return state
 }
 
-export default Saved;
+
+export default connect(mapStateToProps,null)(Saved)

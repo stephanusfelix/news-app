@@ -22,7 +22,7 @@ const Navbar = () => {
           <li>
             <Link to="/saved">Saved</Link>
           </li>
-          <li>
+          <li className="right">
             <Search />
           </li>
         </ul>

@@ -17,8 +17,10 @@ function Search(){
       
     return(
         <>
+        <div className="right-navbar">
             <input onChange={inputOnChange} className="INPUT" type="text"  placeholder="Search..."/>
             <button onClick={submitOnClick} className="BUTTON">Cari Berita</button>
+        </div>
         </>
     )
 }

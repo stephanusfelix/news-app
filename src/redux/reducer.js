@@ -26,6 +26,7 @@ const initialState = {
     switch (action.type) {
       case "ADD_NEWS":
         state.news.push(action.payload.news)
+        alert("News "+action.payload.news.title+" is saved")
         return {
           ...state
         };
